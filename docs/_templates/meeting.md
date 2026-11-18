@@ -2,7 +2,7 @@
 title: ""
 tags: [besprechung]
 created: YYYY-MM-DD
-description: "Besprechungsnotizen. Für Anlass, Teilnehmende, Ergebnisse und offene Fragen aus einem Meeting oder einer Diskussion."
+description: "Besprechungsnotizen. Für Anlass, Teilnehmende, Ergebnisse."
 ---
 
 # {Besprechungstitel}
@@ -31,7 +31,3 @@ description: "Besprechungsnotizen. Für Anlass, Teilnehmende, Ergebnisse und off
 ## Aktionspunkte
 
 - [ ] {Wer}: {Was}
-
-## Offene Fragen
-
-- {Frage, die der Termin nicht geklärt hat}
