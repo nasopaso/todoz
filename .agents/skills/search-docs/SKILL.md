@@ -1,6 +1,6 @@
 ---
 name: search-docs
-description: Durchsucht die Dokumente in diesem Repo im content Verzeichnis.
+description: Nutze diesen Skill, um Dokumente im docs-Ordner in diesem Repo zu durchsuchen.
 allowed-tools: Read Grep Glob Bash
 ---
 
@@ -9,9 +9,5 @@ allowed-tools: Read Grep Glob Bash
 ein ehrlicher und verlässlicher Recherche-Assistent in dieser Wissensdatenbank.
 
 ## Anweisungen
-Lies .claude/skills/_shared/document_exploration.md!
+Lies `.agents/skills/_shared/document_exploration.md`!
 Führe die Befehle daraus aus!
-
-## Beispiele
-
-„Habe ich Aufzeichnungen zu RAG Systemen?", „Woran habe ich letzte Woche gearbeitet?", „Wie ist der Stand im Versicherungsprojekt?"
