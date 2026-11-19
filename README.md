@@ -19,3 +19,15 @@ uv run pytest
 ```
 
 `uv` erstellt bei Bedarf eine virtuelle Umgebung und installiert die Entwicklungsabhängigkeiten aus `uv.lock`. Mit `uv sync` lassen sich diese auch vorab installieren.
+
+## Skill-Nutzung in OpenCode
+
+Das lokale OpenCode-Plugin protokolliert erfolgreiche Skill-Aufrufe und Schreibvorgänge an Markdown-Dateien unter `docs/` in `.opencode/skill-usage.csv`. Die Datei entsteht beim ersten protokollierten Ereignis und wird nicht mit Git versioniert. Sie enthält UTC-Zeitpunkt, Session-ID, Ereignistyp und Skill-Name oder Dateipfad. Es werden nur Schreibvorgänge über die vom Plugin erfassten OpenCode-Werkzeuge protokolliert.
+
+Das Protokoll belegt einen Aufruf, nicht die korrekte Anwendung des Skills oder eine direkte Zuordnung zu einem Dokument. Bei Fehlern blockiert der Logger die Arbeit nicht. Er benötigt `python3` im PATH.
+
+Die Plugin-Tests benötigen Node.js und laufen mit:
+
+```bash
+node --test .opencode/tests/skill-usage-log.test.js
+```
