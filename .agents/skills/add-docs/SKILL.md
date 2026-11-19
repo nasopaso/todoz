@@ -28,4 +28,4 @@ Wenn kein Template zu passen scheint, frage den Nutzer, ob ein neues Template an
 Identifiziere den passenden Speicherort für die Informationen, die du in die Wissensdatenbank einpflegen sollst.
 Denke hart darüber nach, ob die Infos in bestehende Dokumente eingepflegt werden können oder ob ein neues Dokument über das von dir ausgesuchte Template angelegt werden muss.
 4. Schreibe den Dateinamen in kebab-case. Für zeitgebundene Dokumente (Meetings, Workshop-Planungen, Analysen, Experimente): mit `YYYY-MM-DD-` als Präfix.
-5. Anti-KI-Selbstprüfung. Lies den eben erzeugten Text (Körper, `title`, `description`) noch einmal und überarbeite ihn. Beachte dabei einen Schreibstil-Vertrag in `AGENTS.md`.
+5. Humanize den von dir erstellten Text mit dem humanize-skill.
