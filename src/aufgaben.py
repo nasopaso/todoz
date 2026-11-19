@@ -26,7 +26,7 @@ def main(argv=None):
     done.add_argument("id", type=positive_nummer, help="ID der Aufgabe")
     args = parser.parse_args(argv)
 
-    speicher = AufgabenSpeicher("aufgaben.json")
+    speicher = AufgabenSpeicher("data/aufgaben.json")
     try:
         if args.befehl == "add":
             aufgabe = speicher.hinzufuegen(args.titel)

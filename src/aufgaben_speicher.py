@@ -46,6 +46,7 @@ class AufgabenSpeicher:
 
     def speichern(self, aufgaben):
         try:
+            self.datei.parent.mkdir(parents=True, exist_ok=True)
             with self.datei.open("w", encoding="utf-8") as datei:
                 json.dump(aufgaben, datei, ensure_ascii=False, indent=2)
                 datei.write("\n")

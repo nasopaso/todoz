@@ -29,7 +29,7 @@ Wer Aufgaben festhalten und ihren Erledigungsstatus nachverfolgen möchte, benö
 
 ## Lösung
 
-Das Programm kann Aufgaben hinzufügen, alle Aufgaben anzeigen und Aufgaben als erledigt markieren. Es speichert sie in `aufgaben.json` im aktuellen Arbeitsverzeichnis. Eine fehlende Datei wird beim ersten Hinzufügen angelegt.
+Das Programm kann Aufgaben hinzufügen, alle Aufgaben anzeigen und Aufgaben als erledigt markieren. Es speichert sie in `data/aufgaben.json` relativ zum aktuellen Arbeitsverzeichnis. Ein fehlendes Verzeichnis und eine fehlende Datei werden beim ersten Hinzufügen angelegt.
 
 ## Was die Lösung unterscheidet
 

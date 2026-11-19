@@ -6,12 +6,12 @@ from pathlib import Path
 import pytest
 
 
-SKRIPT = Path(__file__).resolve().parents[1] / "aufgaben.py"
+SKRIPT = Path(__file__).resolve().parents[1] / "src" / "aufgaben.py"
 
 
 @pytest.fixture
 def datendatei(tmp_path):
-    return tmp_path / "aufgaben.json"
+    return tmp_path / "data" / "aufgaben.json"
 
 
 @pytest.fixture
@@ -32,6 +32,7 @@ def test_leere_liste_legt_keine_datei_an(cli, datendatei):
     assert ergebnis.returncode == 0
     assert "Keine Aufgaben" in ergebnis.stdout
     assert not datendatei.exists()
+    assert not datendatei.parent.exists()
 
 
 def test_aufgaben_hinzufuegen_auflisten_und_erledigen(cli, datendatei):
@@ -74,6 +75,7 @@ def test_ungueltige_eingaben(cli, datendatei, befehl):
     '[{"id": 1, "titel": "Test", "erledigt": 1}]',
 ])
 def test_beschaedigte_datei_wird_nicht_ueberschrieben(cli, datendatei, inhalt):
+    datendatei.parent.mkdir()
     datendatei.write_text(inhalt, encoding="utf-8")
     ergebnis = cli("add", "Neu")
     assert ergebnis.returncode != 0
@@ -82,8 +84,16 @@ def test_beschaedigte_datei_wird_nicht_ueberschrieben(cli, datendatei, inhalt):
 
 
 def test_datei_kann_nicht_gelesen_werden(cli, datendatei):
-    datendatei.mkdir()
+    datendatei.mkdir(parents=True)
     ergebnis = cli("list")
+    assert ergebnis.returncode != 0
+    assert "konnte nicht gelesen werden" in ergebnis.stderr
+    assert "Traceback" not in ergebnis.stderr
+
+
+def test_datenverzeichnis_ist_eine_datei(cli, datendatei):
+    datendatei.parent.write_text("kein Verzeichnis", encoding="utf-8")
+    ergebnis = cli("add", "Test")
     assert ergebnis.returncode != 0
     assert "konnte nicht gelesen werden" in ergebnis.stderr
     assert "Traceback" not in ergebnis.stderr
