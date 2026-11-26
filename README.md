@@ -20,6 +20,10 @@ uv run pytest
 
 `uv` erstellt bei Bedarf eine virtuelle Umgebung und installiert die Entwicklungsabhängigkeiten aus `uv.lock`. Mit `uv sync` lassen sich diese auch vorab installieren.
 
+## Showcase neuen ADR einfügen:
+Tool Harness zB OpenCode öffnen und Prompt abschicken
+"Legen wir mal eine neue Notiz an. Wir hatten heute im Team eine Besprechung und sind zu dem Schluss gekommen, dass wir jetzt erstmal für das kleine lokale Projekt JSON statt SQLite verwenden wollen, weil wir halt keine zusätzliche Datenbank einrichten müssen. Aber Nachteil ist halt, dass wir keine Eignung für gleichzeitige Schreibzugriffe damit haben."
+
 ## Skill-Nutzung in OpenCode
 
 Das lokale OpenCode-Plugin protokolliert erfolgreiche Skill-Aufrufe und Schreibvorgänge an Markdown-Dateien unter `docs/` in `.opencode/skill-usage.csv`. Die Datei entsteht beim ersten protokollierten Ereignis und wird nicht mit Git versioniert. Sie enthält UTC-Zeitpunkt, Session-ID, Ereignistyp und Skill-Name oder Dateipfad. Es werden nur Schreibvorgänge über die vom Plugin erfassten OpenCode-Werkzeuge protokolliert.
